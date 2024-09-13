@@ -1,0 +1,31 @@
+{
+    "name": "guiszytko/laravel-file-manager",
+    "description": "Pacote de gerenciamento de arquivos para Laravel.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Guilherme Cotta",
+            "email": "guiszytko@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Guiszytko\\LaravelFileManager\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Guiszytko\\LaravelFileManager\\Providers\\FileManagerServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "php": ">=8.0",
+        "laravel/framework": "^9.0|^10.0|^11.0",
+        "intervention/image": "^3.8"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
