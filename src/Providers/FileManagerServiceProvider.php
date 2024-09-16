@@ -24,7 +24,10 @@ class FileManagerServiceProvider extends ServiceProvider
             __DIR__ . '/../config/file-manager.php' => config_path('file-manager.php'),
         ], 'config');
 
-        // Carregar migrações
-        $this->loadMigrationsFrom(__DIR__ . '/../migrations');
+        $this->publishes([
+            __DIR__ . '/../database/migrations/' => database_path('migrations'),
+        ], 'migrations');
+
+     
     }
 }
