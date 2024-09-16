@@ -1,17 +1,18 @@
-
 # Laravel File Manager
 
-**Laravel File Manager** é um pacote simples para gerenciar o upload e armazenamento de arquivos no Laravel, incluindo suporte à geração de miniaturas para imagens. Ele permite associar arquivos a modelos usando relações polimórficas e oferece métodos para upload e exclusão de arquivos.
+**Laravel File Manager** é um pacote simples para gerenciar o upload e armazenamento de arquivos no Laravel, incluindo
+suporte à geração de miniaturas para imagens. Ele permite associar arquivos a modelos usando relações polimórficas e
+oferece métodos para upload e exclusão de arquivos.
 
 ## Índice
 
 - [Instalação](#instalação)
 - [Configuração](#configuração)
 - [Uso](#uso)
-  - [No Modelo](#no-modelo)
-  - [No Controller](#no-controller)
-  - [Na View](#na-view)
-  - [Exclusão de Arquivos](#exclusão-de-arquivos)
+    - [No Modelo](#no-modelo)
+    - [No Controller](#no-controller)
+    - [Na View](#na-view)
+    - [Exclusão de Arquivos](#exclusão-de-arquivos)
 - [Publicação de Arquivos e Migrações](#publicação-de-arquivos-e-migrações)
 - [License](#license)
 
@@ -31,20 +32,20 @@ Após a instalação, o **Laravel Package Auto-Discovery** deve registrar automa
 
 ## Configuração
 
-### 1. Executar as Migrações
+### 1. Publicar as Configurações
+
+Se desejar personalizar as configurações padrão, você pode publicar o arquivo de configuração do pacote:
+
+```bash
+php artisan vendor:publish --provider="Guiszytko\LaravelFileManager\Providers\FileManagerServiceProvider" 
+```
+
+### 2. Executar as Migrações
 
 O pacote inclui uma migração para criar a tabela `files`. Para criar a tabela, execute as migrações:
 
 ```bash
 php artisan migrate
-```
-
-### 2. Publicar as Configurações (Opcional)
-
-Se desejar personalizar as configurações padrão, você pode publicar o arquivo de configuração do pacote:
-
-```bash
-php artisan vendor:publish --provider="Guiszytko\LaravelFileManager\Providers\FileManagerServiceProvider" --tag="config"
 ```
 
 Isso criará o arquivo `config/file-manager.php`, onde você poderá ajustar opções como:
@@ -84,7 +85,8 @@ class Post extends Model
 
 ### No Controller
 
-Você pode utilizar o método `uploadFile()` para fazer o upload de um arquivo e associá-lo ao modelo. Aqui está um exemplo de como fazer isso em um controlador:
+Você pode utilizar o método `uploadFile()` para fazer o upload de um arquivo e associá-lo ao modelo. Aqui está um
+exemplo de como fazer isso em um controlador:
 
 ```php
 <?php
@@ -125,7 +127,8 @@ class PostController extends Controller
 
 ### Na View
 
-Para exibir os arquivos associados a um modelo, como um `Post`, você pode iterar sobre os arquivos e exibi-los na sua view:
+Para exibir os arquivos associados a um modelo, como um `Post`, você pode iterar sobre os arquivos e exibi-los na sua
+view:
 
 ```blade
 @extends('layouts.app')
@@ -152,7 +155,8 @@ Para exibir os arquivos associados a um modelo, como um `Post`, você pode itera
 
 ### Exclusão de Arquivos
 
-Para deletar arquivos associados a um modelo, o pacote oferece o método `deleteFile()` na `FileUploadTrait`. Isso facilita a remoção do arquivo tanto do banco de dados quanto do disco.
+Para deletar arquivos associados a um modelo, o pacote oferece o método `deleteFile()` na `FileUploadTrait`. Isso
+facilita a remoção do arquivo tanto do banco de dados quanto do disco.
 
 #### No Controller
 
@@ -222,8 +226,10 @@ Este pacote é licenciado sob a [MIT License](LICENSE).
 
 ## Contribuições
 
-Contribuições são bem-vindas! Se encontrar algum bug ou tiver sugestões de melhorias, sinta-se à vontade para abrir uma _issue_ ou enviar um _pull request_ no [repositório do GitHub](https://github.com/guiszytko/laravel-file-manager).
+Contribuições são bem-vindas! Se encontrar algum bug ou tiver sugestões de melhorias, sinta-se à vontade para abrir uma
+_issue_ ou enviar um _pull request_ no [repositório do GitHub](https://github.com/guiszytko/laravel-file-manager).
 
 ---
 
-Essa documentação deve estar pronta para ser usada no seu projeto. Se precisar de mais ajustes ou tiver mais dúvidas, sinta-se à vontade para perguntar!# laravel-file-manager
+Essa documentação deve estar pronta para ser usada no seu projeto. Se precisar de mais ajustes ou tiver mais dúvidas,
+sinta-se à vontade para perguntar!# laravel-file-manager
